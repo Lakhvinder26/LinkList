@@ -1,0 +1,29 @@
+#! /bin/bash
+
+	echo "DO YOU WANT TO COMPILE ?(y/n)"
+	read ret
+	echo "IT TAKE FEW SECOUND..."
+	if [ $ret == 'y' ]
+	then
+		gcc -c main.c operation.c create_node.c main_menu.c treverse.c insert.c insert_menu.c insert_beg.c insert_end.c insert_pos.c create_node_1.c delete.c delete_beg.c delete_end.c delete_beg.c delete_menu.c delete_pos.c
+		
+		gcc -o linklist main.o operation.o create_node.o main_menu.o treverse.o insert.o insert_beg.o insert_end.o insert_menu.o insert_pos.o create_node_1.o delete.o delete_beg.o delete_end.o delete_menu.o delete_pos.o
+		
+		echo "COMPILATION SUCCESSFULL "
+		
+	else
+		echo "COMPILATION TERMINATED "
+	fi
+	
+	echo "DO YOU WANT TO EXECUTE?(y/n)  "
+	read ret
+	
+	if [ $ret == 'y' ]
+	then
+		./linklist
+	else
+	echo "EXECUTION ABORTED"		
+	fi
+
+	echo " THANK YOU "	
+	rm *.o
